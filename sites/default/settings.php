@@ -251,7 +251,7 @@ $databases = array (
     array (
       'database' => 'compucorp',
       'username' => 'root',
-      'password' => '',
+      'password' => 'compucorp123',
       'host' => 'localhost',
       'port' => '',
       'driver' => 'mysql',

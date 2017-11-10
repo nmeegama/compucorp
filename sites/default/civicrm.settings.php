@@ -73,7 +73,7 @@ if (!defined('CIVICRM_UF')) {
  *      define( 'CIVICRM_UF_DSN', 'mysql://cms_db_username:cms_db_password@db_server/cms_database?new_link=true');
  */
 if (!defined('CIVICRM_UF_DSN') && CIVICRM_UF !== 'UnitTests') {
-  define( 'CIVICRM_UF_DSN'           , 'mysql://root:@localhost/compucorp?new_link=true');
+  define( 'CIVICRM_UF_DSN', 'mysql://root:compucorp123@localhost/compucorp?new_link=true');
 }
 
 // 
@@ -106,7 +106,7 @@ if (!defined('CIVICRM_DSN')) {
     define('CIVICRM_DSN', $GLOBALS['_CV']['TEST_DB_DSN']);
   }
   else {
-    define('CIVICRM_DSN', 'mysql://root:@localhost:3306/compucorp_civicrm?new_link=true');
+    define('CIVICRM_DSN', 'mysql://root:compucorp123@localhost:3306/compucorp_civicrm?new_link=true');
   }
 }
 
@@ -178,7 +178,7 @@ if (!defined('CIVICRM_LOGGING_DSN')) {
 
 global $civicrm_root;
 
-$civicrm_root = '/Users/nmeegama/work_repo/compucorp/sites/all/modules/contrib/civicrm';
+$civicrm_root = '/var/www/compucorp/sites/all/modules/contrib/civicrm';
 if (!defined('CIVICRM_TEMPLATE_COMPILEDIR')) {
   define( 'CIVICRM_TEMPLATE_COMPILEDIR', '/Users/nmeegama/work_repo/compucorp/sites/default/files/civicrm/templates_c/');
 }
