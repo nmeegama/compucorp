@@ -180,7 +180,7 @@ global $civicrm_root;
 
 $civicrm_root = '/var/www/compucorp/sites/all/modules/contrib/civicrm';
 if (!defined('CIVICRM_TEMPLATE_COMPILEDIR')) {
-  define( 'CIVICRM_TEMPLATE_COMPILEDIR', '/Users/nmeegama/work_repo/compucorp/sites/default/files/civicrm/templates_c/');
+  define( 'CIVICRM_TEMPLATE_COMPILEDIR', '/var/www/compucorp/sites/default/files/civicrm/templates_c/');
 }
 
 /**
