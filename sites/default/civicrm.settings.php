@@ -216,7 +216,7 @@ if (!defined('CIVICRM_TEMPLATE_COMPILEDIR')) {
  *
  */
 if (!defined('CIVICRM_UF_BASEURL')) {
-  define( 'CIVICRM_UF_BASEURL'      , 'http://compucorp.local/');
+  define( 'CIVICRM_UF_BASEURL'      , 'http://ec2-52-53-152-32.us-west-1.compute.amazonaws.com/');
 }
 
 /**
