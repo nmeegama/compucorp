@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.30, created on 2017-11-10 14:50:11
+<?php /* Smarty version 2.6.30, created on 2017-11-17 00:03:49
          compiled from CRM/Contact/Page/Inline/CommunicationPreferences.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('block', 'crmScope', 'CRM/Contact/Page/Inline/CommunicationPreferences.tpl', 1, false),array('block', 'ts', 'CRM/Contact/Page/Inline/CommunicationPreferences.tpl', 28, false),)), $this); ?>

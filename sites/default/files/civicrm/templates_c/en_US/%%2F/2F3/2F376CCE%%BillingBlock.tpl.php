@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.30, created on 2017-11-10 21:38:43
+<?php /* Smarty version 2.6.30, created on 2017-11-16 23:57:36
          compiled from CRM/Core/BillingBlock.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('block', 'crmScope', 'CRM/Core/BillingBlock.tpl', 1, false),array('block', 'crmRegion', 'CRM/Core/BillingBlock.tpl', 26, false),array('block', 'ts', 'CRM/Core/BillingBlock.tpl', 40, false),array('modifier', 'count', 'CRM/Core/BillingBlock.tpl', 28, false),array('modifier', 'crmAddClass', 'CRM/Core/BillingBlock.tpl', 73, false),array('modifier', 'json_encode', 'CRM/Core/BillingBlock.tpl', 88, false),)), $this); ?>

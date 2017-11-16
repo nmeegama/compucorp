@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.30, created on 2017-11-10 14:38:23
+<?php /* Smarty version 2.6.30, created on 2017-11-17 00:03:51
          compiled from CRM/common/jsortable.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('block', 'crmScope', 'CRM/common/jsortable.tpl', 1, false),array('block', 'ts', 'CRM/common/jsortable.tpl', 116, false),)), $this); ?>

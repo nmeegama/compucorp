@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.30, created on 2017-11-10 21:38:43
+<?php /* Smarty version 2.6.30, created on 2017-11-16 23:57:36
          compiled from CRM/common/paymentBlock.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('block', 'crmScope', 'CRM/common/paymentBlock.tpl', 1, false),array('function', 'crmURL', 'CRM/common/paymentBlock.tpl', 114, false),)), $this); ?>
