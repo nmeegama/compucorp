@@ -1,0 +1,101 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: nmeegama
+ * Date: 14/11/17
+ * Time: 1:07 PM
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function commerce_product_civicrm_menu() {
+
+  $items['admin/commerce/config/compucorp/civicrm'] = array(
+    'title'            => 'CiviCRM',
+    'description'      => 'Configure Drupal Commerce and CiviCRM integration',
+    'page callback'    => 'drupal_get_form',
+    'page arguments'   => array('commerce_product_civicrm_admin_form'),
+    'access arguments' => array('configure store'),
+    'type'             => MENU_NORMAL_ITEM,
+    'file'             => 'includes/commerce_product_civicrm.admin.inc',
+  );
+
+  return $items;
+
+}
+
+/**
+ * Implements hook_permission().
+ */
+function commerce_product_civicrm_permission() {
+  //TODO: Add suitable permission.
+}
+
+/**
+ * Implements hook_commerce_payment_transaction_insert().
+ */
+function commerce_product_civicrm_commerce_payment_transaction_insert(
+  $transaction
+) {
+  //TODO: Update the membership status once the payment is complete
+}
+
+/**
+ * Implements hook_commerce_checkout_complete().
+ */
+function commerce_product_civicrm_commerce_checkout_complete($order) {
+
+  $membership_json = variable_get('commerce_product_civicrm_membership', '');
+  $fid             = variable_get(
+    'commerce_civicrm_product_financial_type_id',
+    0
+  );
+  $membership_data = json_decode($membership_json, TRUE);
+  $order_wrapper   = entity_metadata_wrapper('commerce_order', $order);
+
+  // Loop through the order line items.
+  foreach ($order_wrapper->commerce_line_items as $key => $line_item_wrapper) {
+    if (isset($line_item_wrapper->commerce_product)) {
+      $type = $line_item_wrapper->commerce_product->type->value();
+
+      if ($membership_data[$type]['membership_needed']) {
+        module_load_include('inc', 'commerce_product_civicrm', 'includes/commerce_product_civicrm.utilities');
+        $cid = commerce_product_civicrm_get_civicrm_contact_id_of_buyer($order);
+        if ($cid) {
+          $mid = $membership_data[$type]['membership_id'];
+          if (!commerce_product_civicrm_is_exist_civicrm_membership(
+            $cid,
+            $mid
+          )) {
+
+            $source = 'Drupal_commerce_order_' . $order_wrapper->getIdentifier(
+              ) . '-li-' . $line_item_wrapper->getIdentifier();
+            commerce_product_civicrm_create_civicrm_membership(
+              $cid,
+              $mid,
+              $source
+            );
+            $amt      = $line_item_wrapper->commerce_product->commerce_price->amount_decimal->value(
+            );
+            $currency = $line_item_wrapper->commerce_product->commerce_price->currency_code->value(
+            );
+            commerce_product_civicrm_create_civicrmcontribution(
+              $cid,
+              $fid,
+              $source,
+              $amt,
+              $currency
+            );
+
+          }
+        }
+      }
+    }
+
+  }
+}
+
+
+
+

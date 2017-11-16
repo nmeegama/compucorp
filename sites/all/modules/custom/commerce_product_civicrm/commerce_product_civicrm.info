@@ -1,0 +1,16 @@
+name = Commerce product CiviCRM
+description = A sample integration module with civiCRM.
+core = 7.x
+package = Compucorp
+
+dependencies[] = civicrm
+
+configure = admin/commerce/config/compucorp/civicrm
+
+files[] = includes/CiviCRMEntities/CiviCRMEntity.inc
+files[] = includes/CiviCRMEntities/Contact/CiviCRMContactEntity.inc
+files[] = includes/CiviCRMEntities/Membership/CiviCRMMembershipEntity.inc
+files[] = includes/CiviCRMEntities/Contribution/CiviCRMContributionEntity.inc
+files[] = includes/CiviCRMEntities/FinancialType/CiviCRMFinancialTypeEntity.inc
+files[] = includes/CiviCRMEntities/MembershipType/CiviCRMMembershipTypeEntity.inc
+
